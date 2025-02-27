@@ -6,9 +6,9 @@ app = Flask(__name__)
 @app.route('/')
 def index():  # put application's code here
     conn = mysql.connector.connect(
-        host = '',
+        host = 'mysql',
         user = 'root',
-        password = '',
+        password = 'Password1234',
         database = 'db'
     )
     cursor = conn.cursor()
@@ -20,4 +20,4 @@ def index():  # put application's code here
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
